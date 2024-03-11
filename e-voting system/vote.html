@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>voter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            border-radius: 5px;
+            background-color: #555;
+        }
+
+        nav a:hover {
+            background-color: #666;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <header>
+        <h1 style="color: #fff;">Campus eVoting System</h1>
+    </header>
+    <nav>
+        <a href="login.html">Login</a><i class="fas fa-login-yea"></i>
+        <a href="Home.html"><i class="fas fa-info-circle"></i>Home</a>
+        <a href="vote.html"><i class="fas fa-vote-yea"></i>Vote Now</a>
+        <a href="contact.html">About</a>
+    </nav>
+
+    <section id="vote">
+        <h2>Vote Now</h2>
+        <img src="Images/45913820.jpg" alt="vote">
+       <p> <h2>Exercise your right to vote!</h2></p>
+       <p><h3>Make your choice! Make it count</h3></p>
+        <p>Cast your vote for the candidates who will lead the campus to a brighter future.</p>
+        <button onclick="castVote()">Vote</button>
+        <p id="confirmation">Thank you for casting your vote!</p>
+        <style>
+            #vote {
+                text-align: center;
+                overflow: hidden; /* Clear float */
+            }
+        
+            #vote img {
+                float: left;
+                margin-right: 20px;
+                max-width: 50%; /* Adjust as needed */
+                height: auto;
+            }
+    
+            #vote p{
+                text-align: center;
+                text-decoration: wavy;
+                font-size: large;
+                font-family: Arial, Helvetica, sans-serif;
+                padding-top: 30px;
+                font-weight: 100;
+                
+            }
+    
+        
+            #vote button {
+                background-color: #8303a3;
+                color: white;
+                padding: 12px 20px;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                border-radius: 60%;
+                
+            }
+        
+            #confirmation {
+                display: none; /* Initially hidden */
+                color: #4CAF50;
+                font-weight: bold;
+                margin-top: 10px;
+            }
+        </style>
+    </section>
+
+    <section id="candidates">
+        <h2>Candidates</h2>
+        <div class="candidate-container">
+            <img src="Images/22713588.jpg" alt="Candidates" class="float-left">
+            <div class="overlay">
+                <p>Get to know the candidates running for various positions.<br> Review their profiles, goals, and vision for the campus.</p>
+                <a href="candidates.html" class="button">See Candidates</a>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        #candidates {
+            text-align: center;
+        }
+    
+        .candidate-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .candidate-container img {
+            width: 50%; /* Set the width of the image */
+            float: left; /* Float the image to the left */
+            max-height: 100vh; /* Set a maximum height to fit the screen */
+            height: auto;
+        }
+    
+        .overlay {
+            width: 50%; /* Set the width of the overlay */
+            box-sizing: border-box;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(226, 217, 217, 0.034); /* Semi-transparent black overlay */
+            color: white;
+            text-align: center;
+        }
+    
+        .overlay p {
+            font-size: large;
+            color: #000;
+            background-color: none;
+            border-radius: 10px;
+            padding-top: 50px;
+        }
+    
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    
+        .button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+    
+   
+</body>
+</html>
