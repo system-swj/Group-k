@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Council Voting - Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function refreshPage() {
+            setTimeout(function() {
+                location.reload();
+            }, 2000); // Refresh the page after 2 seconds
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <div class="admin-panel">
+            <h2>Add Candidate</h2>
+            <form method="post">
+                <select name="category" required>
+                    <option value="">Select Category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" name="name" placeholder="Enter Candidate Name" required>
+                <input type="file" name="photo" accept="image/*" required>
+                <button type="submit" name="add_candidate" onclick="refreshPage()">Add Candidate</button>
+            </form>
+            <h2>Delete Candidate</h2>
+            <form method="post">
+                <select name="candidate" required>
+                    <option value="">Select Candidate</option>
+                    {% for candidate in candidates %}
+                    <option value="{{ candidate.id }}">{{ candidate.name }} ({{ candidate.category.name }})</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" name="delete_candidate" onclick="refreshPage()">Delete Candidate</button>
+            </form>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

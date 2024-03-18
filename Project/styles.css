@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #333333;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-group button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.category {
+    margin-bottom: 30px;
+}
+
+.candidate {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.candidate img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 10px;
+}
+
+.admin-panel {
+    margin-bottom: 30px;
+}
+
+.admin-panel form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.admin-panel select,
+.admin-panel input[type="text"],
+.admin-panel input[type="file"] {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.admin-panel button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.success {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+}

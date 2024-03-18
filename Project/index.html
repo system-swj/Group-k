@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Council Voting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to School Council Voting</h1>
+        <form method="post">
+            <div class="button-group">
+                <button type="submit" name="student" value="student">Student Login</button>
+                <button type="submit" name="admin" value="admin">Admin Login</button>
+            </div>
+        </form>
+
+        {% if request.form.get('student') %}
+        <div class="login-form">
+            <h2>Student Login</h2>
+            <form method="post">
+                <input type="text" name="student_number" placeholder="Enter Student Number" required>
+                <button type="submit" name="student_login">Login</button>
+            </form>
+        </div>
+        {% elif request.form.get('admin') %}
+        <div class="login-form">
+            <h2>Admin Login</h2>
+            <form method="post">
+    <!-- ... -->
+    <input type="text" name="student_number" placeholder="Enter Student Number" required>
+    <button type="submit" name="student_login">Login</button>
+    <!-- ... -->
+    <input type="text" name="username" placeholder="Enter Username" required>
+    <input type="password" name="password" placeholder="Enter Password" required>
+    <button type="submit" name="admin_login">Login</button>
+</form>
+        </div>
+        {% endif %}
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="{{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

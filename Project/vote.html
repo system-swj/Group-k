@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Council Voting - Vote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Vote for your School Council</h1>
+        <form method="post">
+            {% for category in categories %}
+            <div class="category">
+                <h2>{{ category.name }}</h2>
+                {% for candidate in category.candidates %}
+                <div class="candidate">
+                    <img src="{{ url_for('static', filename='img/' + candidate.photo) }}" alt="{{ candidate.name }}">
+                    <h3>{{ candidate.name }}</h3>
+                    <input type="radio" name="candidate" value="{{ candidate.id }}">
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit">Vote</button>
+        </form>
+    </div>
+</body>
+</html>

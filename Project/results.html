@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Council Voting - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>School Council Voting Results</h1>
+        {% for category in categories %}
+        <div class="category">
+            <h2>{{ category.name }}</h2>
+            <div class="results">
+                {% for candidate in category.candidates %}
+                <div class="candidate">
+                    <h3>{{ candidate.name }}</h3>
+                    <div class="progress-bar">
+                        {% if category.candidates.count() > 0 %}
+                        <div class="progress" style="width: {{ (candidate.votes / category.candidates.with_entities(func.sum(Candidate.votes)).scalar() * 100)|int }}%;"></div>
+                        {% else %}
+                        <div class="progress" style="width: 0%;"></div>
+                        {% endif %}
+                    </div>
+                    <span>{{ candidate.votes }} votes</span>
+                </div>
+                {% endfor %}
+            </div>
+            <canvas id="chart-{{ category.name|lower }}"></canvas>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        const categories = {{ categories|tojson }};
+        generateCharts(categories);
+    </script>
+</body>
+</html>
