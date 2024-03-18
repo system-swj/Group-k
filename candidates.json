@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Candidate 1",
+        "position": "President",
+        "manifesto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+        "image": "Images/candidate1.jpg"
+    },
+    {
+        "name": "Candidate 2",
+        "position": "Vice President",
+        "manifesto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+        "image": "Images/candidate2.jpg"
+    },
+    {
+        "name": "Candidate 3",
+        "position": "Secretary",
+        "manifesto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+        "image": "Images/candidate3.jpg"
+    }
+    // Add more candidates as needed
+]

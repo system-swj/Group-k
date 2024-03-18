@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "e-voting system",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "e-voting system"
+	}
+}
